@@ -122,8 +122,8 @@ void sendArtNetReply() {
   replyBuffer[15] = 0x19;
   replyBuffer[16] = 0;      //firmware hi-lo
   replyBuffer[17] = 0;
-  replyBuffer[18] = highByte(subnet+1);  //subnet hi-lo
-  replyBuffer[19] = lowByte(subnet+1);
+  replyBuffer[18] = highByte(subnet.v4()+1);  //subnet hi-lo
+  replyBuffer[19] = lowByte(subnet.v4()+1);
   replyBuffer[20] = 0;      //oem hi-lo
   replyBuffer[21] = 0;
   replyBuffer[22] = 0;      // ubea
@@ -181,4 +181,3 @@ int artNetOpCode(unsigned char* pbuff) {
   
   return 0;
 }
-
